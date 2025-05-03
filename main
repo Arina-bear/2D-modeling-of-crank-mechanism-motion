@@ -1,0 +1,37 @@
+from vpython import *
+import numpy as np
+import math
+t=0
+omega0=1
+r=1
+R=r
+h=2*r
+scene = canvas(width=900, height=850, center=vector(0,3*r,0), background=color.white)
+ball = sphere(pos=vector(0, 0, 0), radius=0.04, color=color.red,make_trail=False,trail_color=color.yellow,trail_type='curve', retain=1500)
+ball1 = sphere(pos=vector(2*r,0, 0), radius=0.04, color=color.blue,make_trail=False,trail_color=color.green,trail_type='curve', retain=1500)
+ball2 = sphere(pos=vector(3*r,0, 0), radius=0.04, color=color.orange,make_trail=False,trail_color=color.black,trail_type='curve', )
+ball3 = sphere(pos=vector(4*r,0, 0), radius=0.04, color=color.yellow,make_trail=True,trail_color=color.red,trail_type='curve', retain=1500)
+ball4=sphere(pos=vector(2*r,0, 0), radius=1,color=color.blue,make_trail=False,trail_color=color.red,trail_type='curve', retain=1500,opacity=0.1,shininess =0.5,texture=textures.metal)
+cylinder2=cylinder(pos=vector(0,0, 0),axis=vector(2*r,0,0), radius=0.05, color=color.white)
+cylinder3=cylinder(pos=vector(2*r,0, 0),axis=vector(2*r,0,0), radius=0.05, color=color.white)
+label0=label(pos=ball.pos,text="C",height=9,align="left",border=8)
+label1=label(pos=ball2.pos,text="O1",height=9, align='left', border=8)
+label2=label(pos=ball3.pos,text="M",height=9, align='left', border=8)
+while (t<6.5):
+  rate(100)
+  ball.pos = vector(r*cos(omega0*t), r*sin(omega0*t), 0)
+  ball1.pos.y=2*r*sin(omega0*t)#O1
+  ball1.pos.x=2*r*cos(omega0*t)
+  ball4.pos=ball1.pos
+
+  label0.pos=ball.pos
+  label1.pos=ball1.pos
+  label2.pos=ball3.pos
+  ball2.pos.x=ball1.pos.x+r*cos(2*omega0*t)
+  ball2.pos.y=ball1.pos.y+r*sin(2*omega0*t)   
+  ball3.pos.x=ball1.pos.x+2*r*cos(2*omega0*t)
+  ball3.pos.y=ball1.pos.y+2*r*sin(2*omega0*t)
+  cylinder2.axis=vector(ball1.pos.x,ball1.pos.y,0)
+  cylinder3.pos=ball1.pos
+  cylinder3.axis=ball3.pos-ball1.pos
+  t+=0.001
