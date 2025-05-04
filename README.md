@@ -10,4 +10,14 @@ Let's clarify the attributes of the cylinder() instance. pos() is the position o
 <img width="161" alt="image" src="https://github.com/user-attachments/assets/5d59a5ff-8681-46de-b4a6-b7c1917c0832" />
 Let's write down expressions for the velocity of motion of point O1 relative to the coordinate system with the origin at point O, as well as with the origin at the instantaneous center of velocities P, which is the point of contact of the movable and fixed circles.:
 <img width="167" alt="image" src="https://github.com/user-attachments/assets/99fdeb34-f74a-40d1-bfe0-e33c7536c177" />
-w_1 is the rotation speed of the movable circle, and w_0 is the angular velocity of the crank.Let's express w_1 in terms of w_0:Let's express w_1 in terms of w_0:
+w_1 is the rotation speed of the movable circle, and w_0 is the angular velocity of the crank.Let's express w_1 in terms of w_0:Let's express w_1 in terms of w_0.
+
+<img width="245" alt="image" src="https://github.com/user-attachments/assets/52182861-54fc-49f9-a140-86faba51bc96" />
+
+This mechanism has a complex movement consisting of translational and rotational components. As a result, the point M moves along the curve "Pascal's snail"
+
+<img width="373" alt="image" src="https://github.com/user-attachments/assets/096db316-1518-4bca-9703-c9933ae210fa" />
+
+
+
+
